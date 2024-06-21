@@ -1,0 +1,188 @@
+{
+  "stores": [
+    {
+      "id": 1,
+      "name": "Tech Haven",
+      "address": {
+        "street": "123 Tech Street",
+        "city": "Innovation City",
+        "state": "CA",
+        "zip": "94016"
+      },
+      "contact": {
+        "phone": "555-123-4567",
+        "email": "contact@techhaven.com"
+      },
+      "business_hours": {
+        "monday": "9:00 AM - 8:00 PM",
+        "tuesday": "9:00 AM - 8:00 PM",
+        "wednesday": "9:00 AM - 8:00 PM",
+        "thursday": "9:00 AM - 8:00 PM",
+        "friday": "9:00 AM - 8:00 PM",
+        "saturday": "10:00 AM - 6:00 PM",
+        "sunday": "Closed"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Gadget World",
+      "address": {
+        "street": "456 Gadget Avenue",
+        "city": "Tech Town",
+        "state": "TX",
+        "zip": "75001"
+      },
+      "contact": {
+        "phone": "555-987-6543",
+        "email": "info@gadgetworld.com"
+      },
+      "business_hours": {
+        "monday": "10:00 AM - 7:00 PM",
+        "tuesday": "10:00 AM - 7:00 PM",
+        "wednesday": "10:00 AM - 7:00 PM",
+        "thursday": "10:00 AM - 7:00 PM",
+        "friday": "10:00 AM - 7:00 PM",
+        "saturday": "11:00 AM - 5:00 PM",
+        "sunday": "Closed"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Device Depot",
+      "address": {
+        "street": "789 Device Road",
+        "city": "Gizmo Village",
+        "state": "NY",
+        "zip": "10001"
+      },
+      "contact": {
+        "phone": "555-555-5555",
+        "email": "support@devicedepot.com"
+      },
+      "business_hours": {
+        "monday": "9:00 AM - 9:00 PM",
+        "tuesday": "9:00 AM - 9:00 PM",
+        "wednesday": "9:00 AM - 9:00 PM",
+        "thursday": "9:00 AM - 9:00 PM",
+        "friday": "9:00 AM - 9:00 PM",
+        "saturday": "10:00 AM - 7:00 PM",
+        "sunday": "11:00 AM - 5:00 PM"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Gizmo Galaxy",
+      "address": {
+        "street": "101 Gizmo Lane",
+        "city": "Techville",
+        "state": "FL",
+        "zip": "33101"
+      },
+      "contact": {
+        "phone": "555-444-3333",
+        "email": "contact@gizmogalaxy.com"
+      },
+      "business_hours": {
+        "monday": "10:00 AM - 8:00 PM",
+        "tuesday": "10:00 AM - 8:00 PM",
+        "wednesday": "10:00 AM - 8:00 PM",
+        "thursday": "10:00 AM - 8:00 PM",
+        "friday": "10:00 AM - 8:00 PM",
+        "saturday": "10:00 AM - 6:00 PM",
+        "sunday": "12:00 PM - 5:00 PM"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Widget Warehouse",
+      "address": {
+        "street": "202 Widget Way",
+        "city": "Gadgetsburg",
+        "state": "WA",
+        "zip": "98001"
+      },
+      "contact": {
+        "phone": "555-222-1111",
+        "email": "info@widgetwarehouse.com"
+      },
+      "business_hours": {
+        "monday": "9:00 AM - 6:00 PM",
+        "tuesday": "9:00 AM - 6:00 PM",
+        "wednesday": "9:00 AM - 6:00 PM",
+        "thursday": "9:00 AM - 6:00 PM",
+        "friday": "9:00 AM - 6:00 PM",
+        "saturday": "10:00 AM - 5:00 PM",
+        "sunday": "Closed"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Gadget Hub",
+      "address": {
+        "street": "303 Gadget Blvd",
+        "city": "Techton",
+        "state": "IL",
+        "zip": "60601"
+      },
+      "contact": {
+        "phone": "555-333-2222",
+        "email": "support@gadgethub.com"
+      },
+      "business_hours": {
+        "monday": "10:00 AM - 7:00 PM",
+        "tuesday": "10:00 AM - 7:00 PM",
+        "wednesday": "10:00 AM - 7:00 PM",
+        "thursday": "10:00 AM - 7:00 PM",
+        "friday": "10:00 AM - 7:00 PM",
+        "saturday": "11:00 AM - 6:00 PM",
+        "sunday": "12:00 PM - 5:00 PM"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Innovate Store",
+      "address": {
+        "street": "404 Innovate St",
+        "city": "InnoCity",
+        "state": "NV",
+        "zip": "89101"
+      },
+      "contact": {
+        "phone": "555-777-8888",
+        "email": "info@innovatestore.com"
+      },
+      "business_hours": {
+        "monday": "9:00 AM - 7:00 PM",
+        "tuesday": "9:00 AM - 7:00 PM",
+        "wednesday": "9:00 AM - 7:00 PM",
+        "thursday": "9:00 AM - 7:00 PM",
+        "friday": "9:00 AM - 7:00 PM",
+        "saturday": "10:00 AM - 6:00 PM",
+        "sunday": "Closed"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Techie Corner",
+      "address": {
+        "street": "505 Techie Avenue",
+        "city": "Innovation Hub",
+        "state": "CO",
+        "zip": "80201"
+      },
+      "contact": {
+        "phone": "555-666-5555",
+        "email": "contact@techiecorner.com"
+      },
+      "business_hours": {
+        "monday": "9:00 AM - 8:00 PM",
+        "tuesday": "9:00 AM - 8:00 PM",
+        "wednesday": "9:00 AM - 8:00 PM",
+        "thursday": "9:00 AM - 8:00 PM",
+        "friday": "9:00 AM - 8:00 PM",
+        "saturday": "10:00 AM - 7:00 PM",
+        "sunday": "12:00 PM - 5:00 PM"
+      }
+    }
+  ]
+}
