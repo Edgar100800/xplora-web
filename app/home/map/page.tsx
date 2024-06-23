@@ -11,7 +11,7 @@ import { CategoriesBar } from "@/app/ui/movile-app/categories-bar";
 
 export default function Page() {
     const { isLoaded } = useLoadScript({
-        googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY, // Reemplaza esto con tu clave de API de Google Maps
+        googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? "", // Reemplaza esto con tu clave de API de Google Maps
     });
 
     const [center, setCenter] = useState({
