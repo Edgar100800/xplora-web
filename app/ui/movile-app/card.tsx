@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 import { Store } from "@/app/lib/definitions";
 import LeftArrow from "../../../public/icons/chevron-left.svg";
 import RightArrow from "../../../public/icons/chevron-right.svg";
@@ -16,17 +17,19 @@ const images = [
 ];
 
 const Card: React.FC<CardProps> = ({ store }) => {
-    const galleryRef = useRef<HTMLDivElement | null>(null);
+    const galleryRef = useRef<HTMLAnchorElement | null>(null);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(true);
 
-    const scrollLeft = () => {
+    const scrollLeft = (event: React.MouseEvent) => {
+        event.stopPropagation();
         if (galleryRef.current) {
             galleryRef.current.scrollBy({ left: -255, behavior: "smooth" });
         }
     };
 
-    const scrollRight = () => {
+    const scrollRight = (event: React.MouseEvent) => {
+        event.stopPropagation();
         if (galleryRef.current) {
             galleryRef.current.scrollBy({ left: 255, behavior: "smooth" });
         }
@@ -59,7 +62,7 @@ const Card: React.FC<CardProps> = ({ store }) => {
     return (
         <div key={store.id} className="group z-0 ">
             {/* Image Gallery */}
-            <div className="relative ">
+            <div className="relative">
                 {showLeftArrow && (
                     <button
                         className="absolute top-1/2 transform -translate-y-1/2 left-4 bg-white p-2 rounded-full shadow-lg focus:outline-none opacity-0 group-hover:opacity-50 group-hover:hover:opacity-100 transition-opacity duration-300"
@@ -69,8 +72,9 @@ const Card: React.FC<CardProps> = ({ store }) => {
                     </button>
                 )}
 
-                <div
+                <Link
                     ref={galleryRef}
+                    href={"/home/card"}
                     className="flex w-full snap-x overflow-x-scroll hide-scrollbar rounded-2xl space-x-0"
                 >
                     {images.map((image, index) => (
@@ -81,7 +85,7 @@ const Card: React.FC<CardProps> = ({ store }) => {
                             className="object-cover snap-center aspect-square  flex-shrink-0"
                         />
                     ))}
-                </div>
+                </Link>
 
                 {showRightArrow && (
                     <button
@@ -95,18 +99,20 @@ const Card: React.FC<CardProps> = ({ store }) => {
 
             {/* Card Information */}
             <div className="pt-3">
-                <h2 className="text-xl font-semibold">{store.name}</h2>
-                <p className="text-gray-600  mt-1">
-                    {store.address.street}, {store.address.city},{" "}
-                    {store.address.state} {store.address.zip}
-                </p>
-                <p className="text-gray-600  mt-1">
-                    Phone: {store.contact.phone}
-                </p>
-                <p className="text-gray-600 mt-1">
-                    Email: {store.contact.email}
-                </p>
-                <p className="text-gray-600 font-semibold mt-2">Price:</p>
+                <Link href={"/home/card"}>
+                    <h2 className="text-xl font-semibold">{store.name}</h2>
+                    <p className="text-gray-600  mt-1">
+                        {store.address.street}, {store.address.city},{" "}
+                        {store.address.state} {store.address.zip}
+                    </p>
+                    <p className="text-gray-600  mt-1">
+                        Phone: {store.contact.phone}
+                    </p>
+                    <p className="text-gray-600 mt-1">
+                        Email: {store.contact.email}
+                    </p>
+                    <p className="text-gray-600 font-semibold mt-2">Price:</p>
+                </Link>
             </div>
         </div>
     );
