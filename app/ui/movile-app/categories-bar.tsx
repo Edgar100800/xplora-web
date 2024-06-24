@@ -7,6 +7,8 @@ import { ReactSVG } from "react-svg";
 import { NavigationCategories } from "@/app/lib/placeholder-data";
 import { CategoriesBarProps } from "../../lib/definitions";
 
+import "../../globals.css";
+
 export function CategoriesBar({ className }: CategoriesBarProps) {
     const [categories, setCategories] = useState<Category[]>([]);
     const [selectedCategory, setSelectedCategory] = useState<number | null>(
@@ -34,7 +36,7 @@ export function CategoriesBar({ className }: CategoriesBarProps) {
     return (
         <div
             className={clsx(
-                "flex flex-row overflow-x-auto space-x-4 px-6 pt-2 pb-3 snap-x md:items-center md:justify-between md:w-full h-[64px] w-full border-b-2 border-gray-100 shadow-md",
+                "flex flex-row overflow-x-auto space-x-4 px-6 pt-2 pb-3 snap-x md:items-center md:justify-between md:w-full h-[64px] w-full border-b-2 border-gray-100 shadow-md hide-scrollbar",
                 className
             )}
         >
