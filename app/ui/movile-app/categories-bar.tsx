@@ -1,7 +1,7 @@
 "use client";
 
 import { Category } from "../../lib/definitions";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import clsx from "clsx";
 import { ReactSVG } from "react-svg";
 import { NavigationCategories } from "@/app/lib/placeholder-data";
@@ -10,18 +10,16 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 import "../../globals.css";
 
-export function CategoriesBar({ className }: CategoriesBarProps) {
+function CategoriesBarComponent({ className }: CategoriesBarProps) {
     const [categories, setCategories] = useState<Category[]>([]);
-    const [selectedCategory, setSelectedCategory] = useState<number | null>(
-        null
-    );
+    const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
 
     const router = useRouter();
     const searchParams = useSearchParams();
 
     const handleCategoryClick = (categoryId: number) => {
         setSelectedCategory(categoryId);
-        router.push(`?category=${categoryId}`); // Updated for next/navigation
+        router.push(`?category=${categoryId}`);
     };
 
     // useEffect to fetch and set categories
@@ -36,10 +34,10 @@ export function CategoriesBar({ className }: CategoriesBarProps) {
             if (searchParams.has("category")) {
                 const categoryId = Number(searchParams.get("category"));
                 setSelectedCategory(categoryId);
-                router.push(`?category=${categoryId}`); // Updated for next/navigation
+                router.push(`?category=${categoryId}`);
             } else {
                 setSelectedCategory(fetchedCategories[0].id);
-                router.push(`?category=${fetchedCategories[0].id}`); // Updated for next/navigation
+                router.push(`?category=${fetchedCategories[0].id}`);
             }
         };
 
@@ -87,5 +85,13 @@ export function CategoriesBar({ className }: CategoriesBarProps) {
                 </button>
             ))}
         </div>
+    );
+}
+
+export function CategoriesBar({ className }: CategoriesBarProps) {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <CategoriesBarComponent className={className} />
+        </Suspense>
     );
 }
