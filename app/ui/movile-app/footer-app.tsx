@@ -14,26 +14,26 @@ import UserCircleOutline from "../../../public/logos/user-circle-outline.svg";
 const links = [
     {
         name: "Xplora",
-        href: "/home/explore",
+        href: "/explore",
         icon: MagnifyingGlass,
         icon_selected: MagnifyingGlass,
     },
 
     {
         name: "Mapa",
-        href: "/home/map",
+        href: "/map",
         icon: MapOutline,
         icon_selected: MapSolid,
     },
     {
         name: "Navigation",
-        href: "/home/navigate",
+        href: "/navigate",
         icon: MapPinOutline,
         icon_selected: MapPinSolid,
     },
     {
         name: "Perfil",
-        href: "/home/profile",
+        href: "/profile",
         icon: UserCircleOutline,
         icon_selected: UserCicleSolid,
     },

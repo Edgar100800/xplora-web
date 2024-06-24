@@ -6,6 +6,7 @@ import clsx from "clsx";
 import { ReactSVG } from "react-svg";
 import { NavigationCategories } from "@/app/lib/placeholder-data";
 import { CategoriesBarProps } from "../../lib/definitions";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import "../../globals.css";
 
@@ -15,8 +16,12 @@ export function CategoriesBar({ className }: CategoriesBarProps) {
         null
     );
 
+    const router = useRouter();
+    const searchParams = useSearchParams();
+
     const handleCategoryClick = (categoryId: number) => {
         setSelectedCategory(categoryId);
+        router.push(`?category=${categoryId}`); // Updated for next/navigation
     };
 
     // useEffect to fetch and set categories
@@ -27,7 +32,15 @@ export function CategoriesBar({ className }: CategoriesBarProps) {
                 (id) => NavigationCategories[id]
             );
             setCategories(fetchedCategories);
-            setSelectedCategory(fetchedCategories[0].id);
+
+            if (searchParams.has("category")) {
+                const categoryId = Number(searchParams.get("category"));
+                setSelectedCategory(categoryId);
+                router.push(`?category=${categoryId}`); // Updated for next/navigation
+            } else {
+                setSelectedCategory(fetchedCategories[0].id);
+                router.push(`?category=${fetchedCategories[0].id}`); // Updated for next/navigation
+            }
         };
 
         fetchCategories();
