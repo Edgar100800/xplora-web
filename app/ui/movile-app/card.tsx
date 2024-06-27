@@ -9,13 +9,6 @@ interface CardProps {
     store: Store;
 }
 
-const images = [
-    "https://via.placeholder.com/600x400?text=Image+1",
-    "https://via.placeholder.com/600x400?text=Image+2",
-    "https://via.placeholder.com/600x400?text=Image+3",
-    "https://via.placeholder.com/600x400?text=Image+4",
-];
-
 const Card: React.FC<CardProps> = ({ store }) => {
     const galleryRef = useRef<HTMLAnchorElement | null>(null);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
@@ -74,17 +67,22 @@ const Card: React.FC<CardProps> = ({ store }) => {
 
                 <Link
                     ref={galleryRef}
-                    href={"/home/card"}
+                    href={"/card"}
                     className="flex w-full snap-x overflow-x-scroll hide-scrollbar rounded-2xl space-x-0"
                 >
-                    {images.map((image, index) => (
-                        <img
-                            key={index}
-                            src={image}
-                            alt={`Image ${index + 1}`}
-                            className="object-cover snap-center aspect-square  flex-shrink-0"
-                        />
-                    ))}
+                    {store.images.gallery.map(
+                        (image, index) => (
+                            console.log(image.image),
+                            (
+                                <img
+                                    key={index}
+                                    src={"http://localhost:8000" + image.image}
+                                    alt={`Image ${index + 1}`}
+                                    className="object-cover snap-center aspect-square w-full flex-shrink-0"
+                                />
+                            )
+                        )
+                    )}
                 </Link>
 
                 {showRightArrow && (
@@ -99,12 +97,12 @@ const Card: React.FC<CardProps> = ({ store }) => {
 
             {/* Card Information */}
             <div className="pt-3">
-                <Link href={"/home/card"}>
+                <Link href={"/card"}>
                     <h2 className="text-xl font-semibold">{store.name}</h2>
-                    <p className="text-gray-600  mt-1">
+                    {/* <p className="text-gray-600  mt-1">
                         {store.address.street}, {store.address.city},{" "}
                         {store.address.state} {store.address.zip}
-                    </p>
+                    </p> */}
                     <p className="text-gray-600  mt-1">
                         Phone: {store.contact.phone}
                     </p>

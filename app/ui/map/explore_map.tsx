@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { Store } from "../../lib/definitions";
+import { useSearchParams } from "next/navigation";
+import { fetchStoresByCategory } from "@/app/lib/api";
+import { useRouter } from "next/router";
+
 import {
     GoogleMap,
     Marker,
@@ -31,6 +36,27 @@ export const ExploreMap = () => {
             );
         }
     }, []);
+
+    // -------------------------------------------------------
+    const [stores, setStores] = useState<Store[]>([]);
+    const searchParams = useSearchParams();
+
+    useEffect(() => {
+        const fetchStores = async (categoryId: number) => {
+            try {
+                const data = await fetchStoresByCategory(categoryId);
+                setStores(data);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+
+        if (searchParams.has("category")) {
+            const categoryId = Number(searchParams.get("category"));
+            fetchStores(categoryId);
+        }
+    }, [searchParams]);
+    // -------------------------------------------------------
 
     const mapOptions = {
         styles: [
@@ -72,7 +98,6 @@ export const ExploreMap = () => {
                 {/* Puedes agregar otros componentes de Google Maps aquí, como <Marker> */}
                 {center && (
                     <>
-                        {/* <Marker position={center} /> */}
                         <Circle
                             center={center}
                             radius={20} // Adjust radius as needed
@@ -86,6 +111,18 @@ export const ExploreMap = () => {
                         />
                     </>
                 )}
+
+                {stores.map((store) => (
+                    <Marker
+                        onClick={() => console.log(store.id)}
+                        draggable={false}
+                        key={store.id}
+                        position={{
+                            lat: store.location.coords.latitude,
+                            lng: store.location.coords.longitude,
+                        }}
+                    />
+                ))}
             </GoogleMap>
             <style jsx global>{`
                 .gm-style .gmnoprint a,

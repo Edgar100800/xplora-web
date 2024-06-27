@@ -1,18 +1,21 @@
 "use client";
 
-import { Category } from "../../lib/definitions";
+import { Category, CategoryBarIcons } from "../../lib/definitions";
 import { useState, useEffect, Suspense } from "react";
 import clsx from "clsx";
 import { ReactSVG } from "react-svg";
 import { NavigationCategories } from "@/app/lib/placeholder-data";
 import { CategoriesBarProps } from "../../lib/definitions";
 import { useRouter, useSearchParams } from "next/navigation";
+import { fetchCategoriesByPopularity } from "@/app/lib/api"; // Adjust the path as needed
 
 import "../../globals.css";
 
 function CategoriesBarComponent({ className }: CategoriesBarProps) {
     const [categories, setCategories] = useState<Category[]>([]);
-    const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
+    const [selectedCategory, setSelectedCategory] = useState<number | null>(
+        null
+    );
 
     const router = useRouter();
     const searchParams = useSearchParams();
@@ -25,25 +28,32 @@ function CategoriesBarComponent({ className }: CategoriesBarProps) {
     // useEffect to fetch and set categories
     useEffect(() => {
         const fetchCategories = async () => {
-            // Simulate fetching data
-            const fetchedCategories = [2, 7, 6, 1, 3, 4, 5].map(
-                (id) => NavigationCategories[id]
-            );
-            setCategories(fetchedCategories);
+            // Fetching data
+            try {
+                const fetchedCategories = await fetchCategoriesByPopularity();
+                // console.log(fetchedCategories);
+                setCategories(fetchedCategories);
 
-            if (searchParams.has("category")) {
-                const categoryId = Number(searchParams.get("category"));
-                setSelectedCategory(categoryId);
-                router.push(`?category=${categoryId}`);
-            } else {
-                setSelectedCategory(fetchedCategories[0].id);
-                router.push(`?category=${fetchedCategories[0].id}`);
+                
+            } catch (error) {
+                console.error("Error fetching data:", error);
             }
         };
 
         fetchCategories();
     }, []);
 
+    useEffect(() => {
+        if (searchParams.has("category")) {
+            const categoryId = Number(searchParams.get("category"));
+            setSelectedCategory(categoryId);
+            router.push(`?category=${categoryId}`);
+        } else {
+            setSelectedCategory(categories[0]?.id);
+            router.push(`?category=${categories[0]?.id}`);
+        }
+    }, [categories, router, searchParams]);
+    
     return (
         <div
             className={clsx(

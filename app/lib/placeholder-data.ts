@@ -1,7 +1,7 @@
 
-import { Category } from "./definitions";
+import { CategoryBarIcons } from "./definitions";
 
-export const NavigationCategories: Record<number, Category> = {
+export const NavigationCategories: Record<number, CategoryBarIcons> = {
     1: {
         id: 1,
         name: "Restaurantes",

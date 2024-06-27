@@ -2,186 +2,128 @@
   "stores": [
     {
       "id": 1,
-      "name": "Tech Haven",
-      "address": {
-        "street": "123 Tech Street",
-        "city": "Innovation City",
-        "state": "CA",
-        "zip": "94016"
+      "name": "Sandwiches Monstruos",
+      "description": "¡Bienvenid@ a Sándwiches Monstruos! 🍔",
+      "category": 1,
+      "rating": 5,
+      "priority": 10,
+      "is_premium": true,
+      "location": {
+        "coords": {
+          "latitude": -12.046374,
+          "longitude": -77.042793
+        },
+        "address_reference": null,
+        "country": "PE",
+        "address": "Nicolas de Pierola 113, Barranco 15063, Perú"
       },
+      "close_time": null,
+      "open_time": null,
       "contact": {
-        "phone": "555-123-4567",
-        "email": "contact@techhaven.com"
+        "phone": "+51937211084",
+        "email": "moustro@gmail.com"
       },
-      "business_hours": {
-        "monday": "9:00 AM - 8:00 PM",
-        "tuesday": "9:00 AM - 8:00 PM",
-        "wednesday": "9:00 AM - 8:00 PM",
-        "thursday": "9:00 AM - 8:00 PM",
-        "friday": "9:00 AM - 8:00 PM",
-        "saturday": "10:00 AM - 6:00 PM",
-        "sunday": "Closed"
+      "images": {
+        "banner": "/media/mounstro-banner.jpg",
+        "logo": "/media/mounstro-logo.jpg",
+        "gallery": [
+          {
+            "store": 1,
+            "image": "https://via.placeholder.com/600x400?text=Image+10"
+          },
+          {
+            "store": 1,
+            "image": "https://via.placeholder.com/600x400?text=Image+11"
+          },
+          {
+            "store": 1,
+            "image": "https://via.placeholder.com/600x400?text=Image+12"
+          }
+        ]
       }
     },
     {
       "id": 2,
-      "name": "Gadget World",
-      "address": {
-        "street": "456 Gadget Avenue",
-        "city": "Tech Town",
-        "state": "TX",
-        "zip": "75001"
+      "name": "Café del Sol",
+      "description": "El mejor café con vista al mar. ☕",
+      "category": 2,
+      "rating": 4.8,
+      "priority": 8,
+      "is_premium": false,
+      "location": {
+        "coords": {
+          "latitude": -12.046342,
+          "longitude": -77.033518
+        },
+        "address_reference": "Frente al parque principal",
+        "country": "PE",
+        "address": "Avenida Larco 800, Miraflores, Lima, Perú"
       },
+      "close_time": "22:00",
+      "open_time": "07:00",
       "contact": {
-        "phone": "555-987-6543",
-        "email": "info@gadgetworld.com"
+        "phone": "+51987654321",
+        "email": "contacto@cafedelsol.pe"
       },
-      "business_hours": {
-        "monday": "10:00 AM - 7:00 PM",
-        "tuesday": "10:00 AM - 7:00 PM",
-        "wednesday": "10:00 AM - 7:00 PM",
-        "thursday": "10:00 AM - 7:00 PM",
-        "friday": "10:00 AM - 7:00 PM",
-        "saturday": "11:00 AM - 5:00 PM",
-        "sunday": "Closed"
+      "images": {
+        "banner": "/media/cafedelsol-banner.jpg",
+        "logo": "/media/cafedelsol-logo.jpg",
+        "gallery": [
+          {
+            "store": 1,
+            "image": "https://via.placeholder.com/600x400?text=Image+20"
+          },
+          {
+            "store": 1,
+            "image": "https://via.placeholder.com/600x400?text=Image+21"
+          },
+          {
+            "store": 1,
+            "image": "https://via.placeholder.com/600x400?text=Image+22"
+          }
+        ]
       }
     },
     {
       "id": 3,
-      "name": "Device Depot",
-      "address": {
-        "street": "789 Device Road",
-        "city": "Gizmo Village",
-        "state": "NY",
-        "zip": "10001"
+      "name": "Pizzería La Italiana",
+      "description": "Auténtica pizza italiana en el corazón de la ciudad. 🍕",
+      "category": 3,
+      "rating": 4.5,
+      "priority": 9,
+      "is_premium": true,
+      "location": {
+        "coords": {
+          "latitude": -12.123456,
+          "longitude": -77.098765
+        },
+        "address_reference": "Cerca de la plaza central",
+        "country": "PE",
+        "address": "Calle Los Pinos 123, San Isidro, Lima, Perú"
       },
+      "close_time": "23:00",
+      "open_time": "11:00",
       "contact": {
-        "phone": "555-555-5555",
-        "email": "support@devicedepot.com"
+        "phone": "+51912345678",
+        "email": "info@laitaliana.pe"
       },
-      "business_hours": {
-        "monday": "9:00 AM - 9:00 PM",
-        "tuesday": "9:00 AM - 9:00 PM",
-        "wednesday": "9:00 AM - 9:00 PM",
-        "thursday": "9:00 AM - 9:00 PM",
-        "friday": "9:00 AM - 9:00 PM",
-        "saturday": "10:00 AM - 7:00 PM",
-        "sunday": "11:00 AM - 5:00 PM"
-      }
-    },
-    {
-      "id": 4,
-      "name": "Gizmo Galaxy",
-      "address": {
-        "street": "101 Gizmo Lane",
-        "city": "Techville",
-        "state": "FL",
-        "zip": "33101"
-      },
-      "contact": {
-        "phone": "555-444-3333",
-        "email": "contact@gizmogalaxy.com"
-      },
-      "business_hours": {
-        "monday": "10:00 AM - 8:00 PM",
-        "tuesday": "10:00 AM - 8:00 PM",
-        "wednesday": "10:00 AM - 8:00 PM",
-        "thursday": "10:00 AM - 8:00 PM",
-        "friday": "10:00 AM - 8:00 PM",
-        "saturday": "10:00 AM - 6:00 PM",
-        "sunday": "12:00 PM - 5:00 PM"
-      }
-    },
-    {
-      "id": 5,
-      "name": "Widget Warehouse",
-      "address": {
-        "street": "202 Widget Way",
-        "city": "Gadgetsburg",
-        "state": "WA",
-        "zip": "98001"
-      },
-      "contact": {
-        "phone": "555-222-1111",
-        "email": "info@widgetwarehouse.com"
-      },
-      "business_hours": {
-        "monday": "9:00 AM - 6:00 PM",
-        "tuesday": "9:00 AM - 6:00 PM",
-        "wednesday": "9:00 AM - 6:00 PM",
-        "thursday": "9:00 AM - 6:00 PM",
-        "friday": "9:00 AM - 6:00 PM",
-        "saturday": "10:00 AM - 5:00 PM",
-        "sunday": "Closed"
-      }
-    },
-    {
-      "id": 6,
-      "name": "Gadget Hub",
-      "address": {
-        "street": "303 Gadget Blvd",
-        "city": "Techton",
-        "state": "IL",
-        "zip": "60601"
-      },
-      "contact": {
-        "phone": "555-333-2222",
-        "email": "support@gadgethub.com"
-      },
-      "business_hours": {
-        "monday": "10:00 AM - 7:00 PM",
-        "tuesday": "10:00 AM - 7:00 PM",
-        "wednesday": "10:00 AM - 7:00 PM",
-        "thursday": "10:00 AM - 7:00 PM",
-        "friday": "10:00 AM - 7:00 PM",
-        "saturday": "11:00 AM - 6:00 PM",
-        "sunday": "12:00 PM - 5:00 PM"
-      }
-    },
-    {
-      "id": 7,
-      "name": "Innovate Store",
-      "address": {
-        "street": "404 Innovate St",
-        "city": "InnoCity",
-        "state": "NV",
-        "zip": "89101"
-      },
-      "contact": {
-        "phone": "555-777-8888",
-        "email": "info@innovatestore.com"
-      },
-      "business_hours": {
-        "monday": "9:00 AM - 7:00 PM",
-        "tuesday": "9:00 AM - 7:00 PM",
-        "wednesday": "9:00 AM - 7:00 PM",
-        "thursday": "9:00 AM - 7:00 PM",
-        "friday": "9:00 AM - 7:00 PM",
-        "saturday": "10:00 AM - 6:00 PM",
-        "sunday": "Closed"
-      }
-    },
-    {
-      "id": 8,
-      "name": "Techie Corner",
-      "address": {
-        "street": "505 Techie Avenue",
-        "city": "Innovation Hub",
-        "state": "CO",
-        "zip": "80201"
-      },
-      "contact": {
-        "phone": "555-666-5555",
-        "email": "contact@techiecorner.com"
-      },
-      "business_hours": {
-        "monday": "9:00 AM - 8:00 PM",
-        "tuesday": "9:00 AM - 8:00 PM",
-        "wednesday": "9:00 AM - 8:00 PM",
-        "thursday": "9:00 AM - 8:00 PM",
-        "friday": "9:00 AM - 8:00 PM",
-        "saturday": "10:00 AM - 7:00 PM",
-        "sunday": "12:00 PM - 5:00 PM"
+      "images": {
+        "banner": "/media/laitaliana-banner.jpg",
+        "logo": "/media/laitaliana-logo.jpg",
+        "gallery": [
+          {
+            "store": 1,
+            "image": "https://via.placeholder.com/600x400?text=Image+31"
+          },
+          {
+            "store": 1,
+            "image": "https://via.placeholder.com/600x400?text=Image+32"
+          },
+          {
+            "store": 1,
+            "image": "https://via.placeholder.com/600x400?text=Image+33"
+          }
+        ]
       }
     }
   ]
