@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  store     Store?  
+
+  storeId   String?  @unique // Foreign key to Store
+}
+
+model Category {
+  id                Int     @id @default(autoincrement())
+  name              String
+  type              String
+  popularity        Int
+  amount_of_currency Float
+  icon              String
+
+  stores            Store[] // Relation field to Store
+
+  @@map("categories") // Optional: Rename the table in the database
+}
+
+model Store {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  categoryId  Int
+  rating      Float
+  userId      String   @unique // Foreign key to User
+
+  category    Category @relation(fields: [categoryId], references: [id])
+  user        User     @relation(fields: [userId], references: [id])
+
+  @@map("stores") // Optional: Rename the table in the database
+}

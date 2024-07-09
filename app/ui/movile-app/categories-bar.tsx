@@ -27,21 +27,20 @@ function CategoriesBarComponent({ className }: CategoriesBarProps) {
 
     // useEffect to fetch and set categories
     useEffect(() => {
-        const fetchCategories = async () => {
-            // Fetching data
-            try {
-                const fetchedCategories = await fetchCategoriesByPopularity();
-                // console.log(fetchedCategories);
-                setCategories(fetchedCategories);
-
-                
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        };
-
+        async function fetchCategories() {
+          try {
+            const response = await fetch('/api/categories');
+            const data = await response.json();
+            setCategories(data);
+          } catch (error) {
+            console.error('Failed to fetch categories', error);
+          } finally {
+            // setLoading(false);
+          }
+        }
+    
         fetchCategories();
-    }, []);
+      }, []);
 
     useEffect(() => {
         if (searchParams.has("category")) {

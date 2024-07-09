@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres     # Replace with your environment variable for DB user if different
+      POSTGRES_PASSWORD: password # Replace with your environment variable for DB password if different
+      POSTGRES_DB: xploradb       # Replace with your environment variable for DB name if different
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

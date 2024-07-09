@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Restaurantes",
+    "type": "STORE",
+    "popularity": 10,
+    "amount_of_currency": 1641,
+    "icon": "chefs-hat-outline"
+  },
+  {
+    "name": "Museos",
+    "type": "STORE",
+    "popularity": 9,
+    "amount_of_currency": 1827,
+    "icon": "building-library-outline"
+  },
+  {
+    "name": "Bares",
+    "type": "STORE",
+    "popularity": 4,
+    "amount_of_currency": 978,
+    "icon": "beer-outline"
+  },
+  {
+    "name": "Cafeterias",
+    "type": "STORE",
+    "popularity": 3,
+    "amount_of_currency": 1643,
+    "icon": "coffee-outline"
+  },
+  {
+    "name": "Parques",
+    "type": "STORE",
+    "popularity": 5,
+    "amount_of_currency": 1522,
+    "icon": "tree-outline"
+  },
+  {
+    "name": "Galerias",
+    "type": "STORE",
+    "popularity": 3,
+    "amount_of_currency": 332,
+    "icon": "art-outline"
+  },
+  {
+    "name": "Ferias",
+    "type": "STORE",
+    "popularity": 4,
+    "amount_of_currency": 612,
+    "icon": "shop-outline"
+  }
+]
