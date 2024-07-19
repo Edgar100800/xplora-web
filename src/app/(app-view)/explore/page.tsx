@@ -1,11 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
-import api from "../../api/test-api.json";
-import Image from "next/image";
-import testImage from "../../../public/images/test-image.jpg";
-import { Store } from "../../lib/definitions";
-import { CategoriesBar } from "@/app/ui/movile-app/categories-bar";
-import Card from "@/app/ui/movile-app/card";
+import api from "@/lib/test-api.json";
+import { Store } from "../../../lib/definitions";
+import { CategoriesBar } from "@/components/movile-app/categories-bar";
+import Card from "@/components/movile-app/card";
 
 export default function Page() {
     const [stores, setStores] = useState<Store[]>(api.stores);

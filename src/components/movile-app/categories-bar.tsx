@@ -4,15 +4,17 @@ import { Category } from "../../lib/definitions";
 import { useState, useEffect, Suspense } from "react";
 import clsx from "clsx";
 import { ReactSVG } from "react-svg";
-import { NavigationCategories } from "@/app/lib/placeholder-data";
+import { NavigationCategories } from "@/lib/placeholder-data";
 import { CategoriesBarProps } from "../../lib/definitions";
 import { useRouter, useSearchParams } from "next/navigation";
 
-import "../../globals.css";
+import "@/app/globals.css";
 
 function CategoriesBarComponent({ className }: CategoriesBarProps) {
     const [categories, setCategories] = useState<Category[]>([]);
-    const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
+    const [selectedCategory, setSelectedCategory] = useState<number | null>(
+        null
+    );
 
     const router = useRouter();
     const searchParams = useSearchParams();

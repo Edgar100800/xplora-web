@@ -1,7 +1,7 @@
 // import '@/app/ui/global.css';
 // import { inter } from '@/app/ui/fonts';
-import Footer from "../ui/movile-app/footer-app";
-import Header from "../ui/movile-app/header-app";
+import Footer from "../../components/movile-app/footer-app";
+import Header from "../../components/movile-app/header-app";
 
 export default function RootLayout({
     children,

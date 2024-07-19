@@ -8,6 +8,7 @@ export default function Footer() {
             <div className="h-8 py-2 px-2 w-min rounded-md	 bg-p-blue ">
                 <Xplora className="h-full w-20" />
             </div>
+            Hola
         </header>
     );
 }

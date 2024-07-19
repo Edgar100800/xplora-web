@@ -1,4 +1,3 @@
-
 import { Category } from "./definitions";
 
 export const NavigationCategories: Record<number, Category> = {

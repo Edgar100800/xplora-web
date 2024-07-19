@@ -1,9 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { Store } from "@/app/lib/definitions";
-import LeftArrow from "../../../public/icons/chevron-left.svg";
+import { Store } from "@/lib/definitions";
+// import LeftArrow from "../../../public/icons/chevron-left.svg";
+import LeftArrow from  "../../../public/icons/chevron-left.svg";
 import RightArrow from "../../../public/icons/chevron-right.svg";
-import "../../globals.css"; // Import the custom CSS file
+// import "../../globals.css"; // Import the custom CSS file
+// import "@/app/globals.css";
+import "../../app/globals.css";
 
 interface CardProps {
     store: Store;

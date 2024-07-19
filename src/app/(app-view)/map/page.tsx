@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 
-import { CategoriesBar } from "@/app/ui/movile-app/categories-bar";
-import { ExploreMap } from "@/app/ui/map/explore_map";
+
+import { CategoriesBar } from "@/components/movile-app/categories-bar";
+import { ExploreMap } from "@/components/movile-map/explore_map";
 
 export default function Page() {
 
