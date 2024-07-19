@@ -26,7 +26,7 @@ export function ImageGallery() {
     }, []);
 
     return (
-        <div className="relative w-full  h-[300px] sm:h-[600px] overflow-hidden">
+        <div className="relative w-full  h-[300px] sm:h-[600px] overflow-hidden brightness-75">
             {images.map((image, index) => (
                 <Image
                     key={index}

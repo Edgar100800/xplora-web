@@ -1,5 +1,5 @@
 import { Category } from '@/app/lib/definitions';
-import { PrismaClient, User } from '@prisma/client';
+import { PrismaClient, User,Store } from '@prisma/client';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -14,15 +14,24 @@ async function resetSequences() {
 }
 
 async function main() {
+  // Paths to JSON files
   const dataDir = path.join(__dirname, 'data');
   const usersPath = path.join(dataDir, 'users.json');
   const categoriesPath = path.join(dataDir, 'categories.json');
   const storesPath = path.join(dataDir, 'stores.json');
+  const producstPath = path.join(dataDir, 'products.json');
+  const eventsPath = path.join(dataDir, 'events.json');
 
+  // Read data from JSON files
   const usersData = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
   const categoriesData = JSON.parse(fs.readFileSync(categoriesPath, 'utf-8'));
   const storesData = JSON.parse(fs.readFileSync(storesPath, 'utf-8'));
+  const productsData = JSON.parse(fs.readFileSync(producstPath, 'utf-8'));
+  const eventsData = JSON.parse(fs.readFileSync(eventsPath, 'utf-8'));
 
+  // Clear all data
+  await prisma.event.deleteMany();
+  await prisma.product.deleteMany();
   await prisma.store.deleteMany();
   await prisma.category.deleteMany();
   await prisma.user.deleteMany();
@@ -49,15 +58,41 @@ async function main() {
   }
 
   // Create Stores
+  const stores: Record<string, Store> = {};
   for (const storeData of storesData) {
     const { categoryName, userName, ...storeInfo } = storeData;
     const category = categories[categoryName];
     const user = users[userName];
-    await prisma.store.create({
+    const store = await prisma.store.create({
       data: {
         ...storeInfo,
         categoryId: category.id,
         userId: user.id,
+      },
+    });
+    stores[store.name] = store;
+  }
+
+  // Create Products
+  for (const productData of productsData) {
+    const { storeName, ...productInfo } = productData;
+    const storename = stores[storeName];
+    await prisma.product.create({
+      data: {
+        ...productInfo,
+        storeId: storename.id,
+      },
+    });
+  }
+
+  // Create Evemts
+  for (const eventData of eventsData) {
+    const { storeName, ...eventInfo } = eventData;
+    const storename = stores[storeName];
+    await prisma.event.create({
+      data: {
+        ...eventInfo,
+        storeId: storename.id,
       },
     });
   }

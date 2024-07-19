@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { Store } from "../../lib/definitions";
 import { useSearchParams } from "next/navigation";
 import { fetchStoresByCategory } from "@/app/lib/api";
@@ -10,6 +10,39 @@ import {
     Circle,
     useLoadScript,
 } from "@react-google-maps/api";
+
+const StoresMap = () => {
+    const [stores, setStores] = useState<Store[]>([]);
+    const searchParams = useSearchParams();
+
+    useEffect(() => {
+        const fetchStores = async (categoryId: number) => {
+            try {
+                const data = await fetchStoresByCategory(categoryId);
+                setStores(data);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+
+        if (searchParams.has("category")) {
+            const categoryId = Number(searchParams.get("category"));
+            fetchStores(categoryId);
+        }
+    }, [searchParams]);
+
+    return stores.map((store) => (
+        <Marker
+            onClick={() => console.log(store.id)}
+            draggable={false}
+            key={store.id}
+            position={{
+                lat: store.location.coords.latitude,
+                lng: store.location.coords.longitude,
+            }}
+        />
+    ));
+};
 
 export const ExploreMap = () => {
     const { isLoaded } = useLoadScript({
@@ -36,27 +69,6 @@ export const ExploreMap = () => {
             );
         }
     }, []);
-
-    // -------------------------------------------------------
-    const [stores, setStores] = useState<Store[]>([]);
-    const searchParams = useSearchParams();
-
-    useEffect(() => {
-        const fetchStores = async (categoryId: number) => {
-            try {
-                const data = await fetchStoresByCategory(categoryId);
-                setStores(data);
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        };
-
-        if (searchParams.has("category")) {
-            const categoryId = Number(searchParams.get("category"));
-            fetchStores(categoryId);
-        }
-    }, [searchParams]);
-    // -------------------------------------------------------
 
     const mapOptions = {
         styles: [
@@ -111,18 +123,9 @@ export const ExploreMap = () => {
                         />
                     </>
                 )}
-
-                {stores.map((store) => (
-                    <Marker
-                        onClick={() => console.log(store.id)}
-                        draggable={false}
-                        key={store.id}
-                        position={{
-                            lat: store.location.coords.latitude,
-                            lng: store.location.coords.longitude,
-                        }}
-                    />
-                ))}
+                <Suspense fallback={<div>Loading markers...</div>}>
+                    <StoresMap />
+                </Suspense>
             </GoogleMap>
             <style jsx global>{`
                 .gm-style .gmnoprint a,

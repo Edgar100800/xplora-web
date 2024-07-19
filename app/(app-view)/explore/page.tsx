@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import api from "../../api/test-api.json";
 import Image from "next/image";
 import testImage from "../../../public/images/test-image.jpg";
@@ -9,7 +9,7 @@ import Card from "@/app/ui/movile-app/card";
 import { fetchStoresByCategory } from "@/app/lib/api";
 import { useRouter, useSearchParams } from "next/navigation";
 
-export default function Page() {
+function StoresComponent() {
     const [stores, setStores] = useState<Store[]>([]);
     const searchParams = useSearchParams();
 
@@ -30,13 +30,21 @@ export default function Page() {
     }, [searchParams]);
 
     return (
+        <ul className="cards">
+            {stores.map((store) => (
+                <Card key={store.id} store={store} />
+            ))}
+        </ul>
+    );
+}
+
+export default function Page() {
+    return (
         <div className="relative">
             <CategoriesBar className="fixed z-10 top-[63px] bg-p-white" />
-            <ul className="cards">
-                {stores.map((store) => (
-                    <Card key={store.id} store={store} />
-                ))}
-            </ul>
+            <Suspense fallback={<div>Loading...</div>}>
+                <StoresComponent />
+            </Suspense>
         </div>
     );
 }

@@ -1,5 +1,20 @@
 [
     {
+        "email": "asdf1@gmail.com",
+        "username": "asdf1",
+        "password": "$2b$10$Fu1G65qTSH4D6sHJwM9P5.Z9sp4mu.urTun1IIG4Mz8SABOnKZp.S"
+    },
+    {
+        "email": "asdf2@gmail.com",
+        "username": "asdf2",
+        "password": "$2b$10$Fu1G65qTSH4D6sHJwM9P5.Z9sp4mu.urTun1IIG4Mz8SABOnKZp.S"
+    },
+    {
+        "email": "asdf3@gmail.com",
+        "username": "asdf3",
+        "password": "$2b$10$Fu1G65qTSH4D6sHJwM9P5.Z9sp4mu.urTun1IIG4Mz8SABOnKZp.S"
+    },
+    {
         "email": "asdf@gmail.com",
         "username": "asdf",
         "password": "$2b$10$Fu1G65qTSH4D6sHJwM9P5.Z9sp4mu.urTun1IIG4Mz8SABOnKZp.S"

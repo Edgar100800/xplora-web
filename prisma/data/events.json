@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Sample Event 1",
+        "date": "2024-07-09T12:00:00Z",
+        "storeName": "Store1 name"
+    },
+    {
+        "name": "Sample Event 2",
+        "date": "2024-07-09T12:00:00Z",
+        "storeName": "Store1 name"
+    },
+    {
+        "name": "Sample Event 3",
+        "date": "2024-07-09T12:00:00Z",
+        "storeName": "Store1 name"
+    }
+]

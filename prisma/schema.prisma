@@ -38,10 +38,57 @@ model Store {
   description String
   categoryId  Int
   rating      Float
+  priority    Int
+  is_premium  Boolean
+  latitude    Float
+  longitude   Float
+  address_reference String
+  country     String
+  address     String
+  email       String
+  phone       String
+  banner      String
+  logo        String
   userId      String   @unique // Foreign key to User
 
   category    Category @relation(fields: [categoryId], references: [id])
   user        User     @relation(fields: [userId], references: [id])
+  events      Event[]
+  products    Product[]
+  galleryImages StoreGalleryImage[]
+
 
   @@map("stores") // Optional: Rename the table in the database
+}
+
+model Event {
+  id        String   @id @default(cuid())
+  name      String
+  date      DateTime
+  storeId   String   // Foreign key to Store
+
+  store     Store    @relation(fields: [storeId], references: [id])
+
+  @@map("events") // Optional: Rename the table in the database
+}
+
+model Product {
+  id        String   @id @default(cuid())
+  name      String
+  price     Float
+  storeId   String   // Foreign key to Store
+
+  store     Store    @relation(fields: [storeId], references: [id])
+
+  @@map("products") // Optional: Rename the table in the database
+}
+
+model StoreGalleryImage {
+  id        String   @id @default(cuid())
+  url       String
+  storeId   String   // Foreign key to Store
+
+  store     Store    @relation(fields: [storeId], references: [id])
+
+  @@map("store_gallery_images") // Optional: Rename the table in the database
 }

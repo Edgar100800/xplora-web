@@ -1,0 +1,19 @@
+[
+    {
+        "name": "Sample Product",
+        "price": 19.99,
+        "storeName": "Store1 name"
+    },
+
+    {
+        "name": "Sample Product",
+        "price": 19.99,
+        "storeName": "Store1 name"
+    },
+
+    {
+        "name": "Sample Product",
+        "price": 19.99,
+        "storeName": "Store1 name"
+    }
+]

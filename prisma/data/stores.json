@@ -1,11 +1,74 @@
 [
-    {
+  {
       "name": "Store1 name",
       "description": "Description of User1 Store",
       "rating": 4.5,
       "categoryName": "Restaurantes",
-      "userName": "asdf"
-    }
-
-  ]
-  
+      "userName": "asdf",
+      "priority": 1,
+      "is_premium": true,
+      "latitude": 40.7128,
+      "longitude": -74.0060,
+      "address_reference": "Near Central Park",
+      "country": "USA",
+      "address": "123 Main St, New York, NY",
+      "email": "store1@example.com",
+      "phone": "+1234567890",
+      "banner": "store1_banner.jpg",
+      "logo": "store1_logo.jpg"
+  },
+  {
+      "name": "Store2 name",
+      "description": "Description of User2 Store",
+      "rating": 4.5,
+      "categoryName": "Restaurantes",
+      "userName": "asdf1",
+      "priority": 2,
+      "is_premium": false,
+      "latitude": 34.0522,
+      "longitude": -118.2437,
+      "address_reference": "Near Hollywood",
+      "country": "USA",
+      "address": "456 Elm St, Los Angeles, CA",
+      "email": "store2@example.com",
+      "phone": "+1234567891",
+      "banner": "store2_banner.jpg",
+      "logo": "store2_logo.jpg"
+  },
+  {
+      "name": "Store3 name",
+      "description": "Description of User3 Store",
+      "rating": 4.5,
+      "categoryName": "Bares",
+      "userName": "asdf2",
+      "priority": 3,
+      "is_premium": true,
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "address_reference": "Near Big Ben",
+      "country": "UK",
+      "address": "789 Oak St, London",
+      "email": "store3@example.com",
+      "phone": "+1234567892",
+      "banner": "store3_banner.jpg",
+      "logo": "store3_logo.jpg"
+  },
+  {
+      "name": "Store4 name",
+      "description": "Description of User4 Store",
+      "rating": 4.5,
+      "categoryName": "Bares",
+      "userName": "asdf3",
+      "priority": 4,
+      "is_premium": false,
+      "latitude": 48.8566,
+      "longitude": 2.3522,
+      "address_reference": "Near Eiffel Tower",
+      "country": "France",
+      "address": "101 Pine St, Paris",
+      "email": "store4@example.com",
+      "phone": "+1234567893",
+      "banner": "store4_banner.jpg",
+      "logo": "store4_logo.jpg"
+  }
+]
