@@ -1,11 +1,11 @@
 "use client";
 
-import { Category } from "../../lib/definitions";
+import { Category } from "@/lib/definitions";
 import { useState, useEffect, Suspense } from "react";
 import clsx from "clsx";
 import { ReactSVG } from "react-svg";
-import { NavigationCategories } from "@/lib/placeholder-data";
-import { CategoriesBarProps } from "../../lib/definitions";
+import { NavigationCategories } from "@/lib/categories-list";
+import { CategoriesBarProps } from "@/lib/definitions";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import "@/app/globals.css";

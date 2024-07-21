@@ -15,6 +15,8 @@ function AllStoreProducts() {
             <ProductCard /><ProductCard />
             <ProductCard />
             <ProductCard />
+            <ProductCard />
+            <ProductCard />
             </ul>
             
           </div>

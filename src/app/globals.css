@@ -87,8 +87,19 @@ html, body {
   padding-right: 24px;
   padding-top: 88px;
   padding-bottom: 24px;
+  width: 100%;
 }
 
+.cards-store-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 32px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  width: 100%;
+}
 .card {
   background: white;
   border-radius: 0.5rem;
