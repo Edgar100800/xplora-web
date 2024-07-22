@@ -118,3 +118,6 @@ html, body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* Login styles */
+@import url('./auth/login/login.css');
