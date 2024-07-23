@@ -6,7 +6,7 @@ export default function Home() {
         <main className=" border-2 border-red-500 flex h-full overflow-y-auto min-h-screen flex-col items-center justify-between p-24">
             <Header />
             <section className="flex flex-col boitems-center justify-center">
-                <h1 className="text-4xl text-center">Bienvenido a Xplora</h1>
+                <h1 className="text-4xl text-center font-mono">Bienvenido a Xplora</h1>
                 <Image src="/logos/Xplora.svg" alt="Xplora" width={500} height={500} />
             </section>
             <Footer />

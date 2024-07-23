@@ -7,9 +7,7 @@ const config = {
     './src/components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-    
-
-	],
+  ],
   prefix: "",
   theme: {
     container: {
@@ -22,7 +20,7 @@ const config = {
     extend: {
       colors: {
         "p-blue": "#1D3041",
-        "p-gray" : "##F1F1F5",
+        "p-gray": "##F1F1F5",
         "p-white": "#FFFFFF",
         "p-black": "#222222",
         "p-grey": "#6A6A6A",
@@ -78,6 +76,9 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
     },
   },

@@ -63,6 +63,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -70,7 +71,8 @@
 
 
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
@@ -100,6 +102,7 @@ html, body {
   padding-bottom: 24px;
   width: 100%;
 }
+
 .card {
   background: white;
   border-radius: 0.5rem;
@@ -115,9 +118,11 @@ html, body {
 
 /* Hide scrollbar for IE, Edge, and Firefox */
 .hide-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 /* Login styles */
-@import url('./auth/login/login.css');
+@import url('./auth/auth.css');
