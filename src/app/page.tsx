@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Header from "../components/landing/header-web";
 import Footer from "../components/landing/footer-web";
+
 export default function Home() {
     return (
         <main className=" border-2 border-red-500 flex h-full overflow-y-auto min-h-screen flex-col items-center justify-between p-24">

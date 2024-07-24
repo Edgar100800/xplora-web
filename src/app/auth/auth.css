@@ -7,7 +7,7 @@
 }
 
 .auth-container {
-  @apply absolute top-0 h-full transition-all duration-200 ease-in-out w-1/2;
+  @apply absolute top-0 h-1/2 sm:h-full transition-all duration-200 ease-in-out w-full sm:w-1/2;  
 }
 
 .auth-overlay {

@@ -19,7 +19,7 @@ function AuthRegister(props: { signIn: boolean }) {
 
   return (
     <article
-      className={`auth-container ${!props.signIn ? "transform translate-x-full opacity-100 z-10" : "opacity-0"
+      className={`auth-container ${!props.signIn ? "transform translate-y-full sm:translate-y-0 sm:translate-x-full opacity-100 z-10" : "opacity-0"
         }`}
     >
       <form className="auth-form" onSubmit={handleSubmit(onSubmit)}>

@@ -20,7 +20,7 @@ function AuthLogin(props: { signIn: boolean }) {
 
   return (
     <article
-      className={`auth-container left-0 ${!props.signIn ? "transform translate-x-full opacity-0 z-0" : ""
+      className={`auth-container left-0 ${!props.signIn ? "transform translate-y-full sm:translate-y-0 sm:translate-x-full opacity-0 z-0" : ""
         }`}
     >
       <form className="auth-form" onSubmit={handleSubmit(onSubmit)}>
