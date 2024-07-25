@@ -1,0 +1,31 @@
+.auth-button-filled {
+  @apply rounded-full border bg-blue-900 text-white font-bold p-3 px-11 uppercase transition-transform duration-75 active:transform active:scale-95 focus:outline-none;
+}
+
+.auth-button-unfilled {
+  @apply rounded-full border border-white bg-transparent text-white font-bold p-3 px-11 uppercase transition-transform duration-75 active:transform active:scale-95 focus:outline-none;
+}
+
+.auth-container {
+  @apply absolute top-0 h-1/2 sm:h-full transition-all duration-200 ease-in-out w-full sm:w-1/2;  
+}
+
+.auth-overlay {
+  @apply absolute h-full w-1/2 flex items-center justify-center flex-col p-8 text-center transition-transform duration-75 ease-in-out;
+}
+
+.auth-title {
+  @apply font-extrabold text-2xl;
+}
+
+.auth-input {
+  @apply bg-gray-200 border-none p-2 w-full rounded-2xl focus:outline-none;
+}
+
+.auth-form {
+  @apply bg-white flex items-center justify-center flex-col p-8 md:p-10 lg:p-14 h-full text-center;
+}
+
+.auth-icon {
+  @apply w-12 h-12 p-2 my-2 border-2 border-p-blue rounded-full;
+}
