@@ -6,7 +6,8 @@ function AboutYourPlace() {
   return (
     <Card className="rounded-lg border-none ">
       <CardContent className="p-0">
-        <div className="flex justify-center items-center min-h-[calc(100vh-128px)]">
+        {/* <div className="flex justify-center items-center min-h-[calc(100vh-128px)]"> */}
+        <div className="flex flex-col items-center overflow-y-auto h-[calc(100vh-128px)] pt-8 ">
           <div className="flex flex-col md:flex-row items-center px-14 md:px-44 gap-10">
             {/* Message */}
             <div className="md:w-1/2 mb-8 md:mb-0">

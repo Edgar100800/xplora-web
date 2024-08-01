@@ -22,6 +22,33 @@ export type Store = {
     };
 };
 
+export type StoreForm = {
+    name: string;
+    category: number;
+    address: {
+        street: string;
+        city: string;
+        state: string;
+        zip: string;
+        coordinates: {
+            latitude: number;
+            longitude: number;
+        };
+    }
+    contact: {
+        phone: string;
+        email: string;
+    };
+    business_hours: {
+        monday: string;
+        tuesday: string;
+        wednesday: string;
+        thursday: string;
+        friday: string;
+        saturday: string;
+        sunday: string;
+    };
+};
 
 export type Category = {
     id: number;

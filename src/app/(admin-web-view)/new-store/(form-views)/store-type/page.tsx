@@ -1,14 +1,12 @@
 "use client";
-import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import { use, useState, useEffect } from "react";
 import { Category } from "@/lib/definitions";
 import clsx from "clsx";
-
 import { ReactSVG } from "react-svg";
 import { NavigationCategories } from "@/lib/categories-list";
-
 import { Card, CardContent } from "@/components/ui/card";
+import { useCounterStoreForm } from "@/hooks/use-new-store-form";
+import { useStoreFormNavigationBar } from '@/hooks/use-new-store-navigation-bar';
 
 const CategoryCard = ({icon,title,isSelected,onClick,}: {icon: string; title: string; isSelected: boolean; onClick: () => void;}) => (
   <div
@@ -29,7 +27,22 @@ const CategoryCard = ({icon,title,isSelected,onClick,}: {icon: string; title: st
 );
 
 function StoreType() {
-  const [selectedCard, setSelectedCard] = useState<null | number>(null);
+  const { nextAvailable, setNextAvailable, handleNextButtomChange } = useStoreFormNavigationBar();
+
+  const { store, updateStore } = useCounterStoreForm();
+
+  const [selectedCard, setSelectedCard] = useState<null | number>(store.category);
+  
+  useEffect(() => {
+    if (selectedCard !== null) {
+      setNextAvailable(true);
+      updateStore({ category: selectedCard });
+    } else {
+      setNextAvailable(false);
+      updateStore({ category: null });
+    }
+  }
+  ,[selectedCard, setNextAvailable, updateStore]);
 
   const categories: Category[] = Object.values(NavigationCategories).map(
     (category) => ({
@@ -54,7 +67,13 @@ function StoreType() {
                     icon={category.icon}
                     title={category.name}
                     isSelected={selectedCard === category.id}
-                    onClick={() => setSelectedCard(category.id)}
+                    onClick={() => {
+                      setSelectedCard(category.id),
+                        updateStore({ category: category.id },
+                        );
+                        setNextAvailable(true);
+
+                    }}
                   />
                 ))}
               </ul>
