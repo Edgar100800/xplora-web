@@ -1,16 +1,6 @@
 import React from "react";
+import { signIn, useSession } from "next-auth/react";
 
-// import Xplora from "../../../../public/logos/Xplora.svg";
-// import Xplora from "/public/logos/Xplora.svg";
-// export default function Header() {
-//     return (
-//         <header className="bg-p-white py-4 px-6 text-center">
-//             <div className="h-8 py-2 px-2 w-min rounded-md	 bg-p-blue ">
-//                 <Xplora className="h-full w-20" />
-//             </div>
-//         </header>
-//     );
-// }
 
 function Header() {
     return (
@@ -33,7 +23,14 @@ function Header() {
                     </a>
                 </nav>
                 <div className="flex items-center space-x-4">
-                    <a
+                    <button
+                        type="button"
+                        className="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                        onClick={() => signIn(undefined, { callbackUrl: "/explore" })}
+                    >
+                        Sign In
+                    </button>
+                    {/* <a
                         href="/auth/login"
                         className="text-gray-700 hover:text-gray-900"
                     >
@@ -44,7 +41,7 @@ function Header() {
                         className="bg-orange-500 text-white py-2 px-4 rounded-full hover:bg-orange-600"
                     >
                         Sign Up
-                    </a>
+                    </a> */}
                 </div>
             </div>
         </header>

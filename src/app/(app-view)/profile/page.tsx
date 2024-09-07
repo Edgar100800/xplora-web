@@ -1,4 +1,12 @@
+
+import UserProfile from "@/components/movile-app/user-profile";
+
 export default function Page() {
-    return <p> Profile Page</p>;
-  }
-  
+  return (
+    <div>
+      <p> Profile Page </p>
+      <UserProfile />
+      
+    </div>
+  );
+}
